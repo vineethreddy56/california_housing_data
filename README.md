@@ -1,4 +1,4 @@
-### california_housing_data
+### California_housing_data
 
 ### Software And Tools Requirements
 
@@ -7,3 +7,8 @@
 3. [VSCodeIDE](https://code.visualstudio.com/)
 4. [GitCLI](http://git-scm.com/book/en/v2/Getting-Started-the-Command-Line)
 
+Create a new environment
+
+```
+conda create -p venv python==3.7 -y
+```
