@@ -35,6 +35,23 @@ def predict_api():
     print("Prediction:", output[0])
 
     return jsonify({'prediction': float(output[0])})
+@app.route('/predict_form', methods=['POST'])
+def predict_form():
+    data = request.form.to_dict()
+    print("Received form data:", data)
+
+    # Convert form data to numpy array
+    input_array = np.array(list(data.values())).reshape(1, -1)
+    print("Input array:", input_array)
+
+    # Transform using scaler
+    new_data = scaler.transform(input_array)
+
+    # Predict
+    output = regmodel.predict(new_data)
+    print("Prediction:", output[0])
+
+    return render_template('home.html', prediction="The House Price Prediction is {}" .format(output[0]))
 
 if __name__ == '__main__':
     app.run(debug=True)

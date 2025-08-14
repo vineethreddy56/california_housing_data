@@ -1,3 +1,28 @@
-<h1>
-    Hello world
-</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ML API</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="login">
+    <h1>California House Price Prediction</h1>
+    <form action="{{ url_for('predict_form') }}" method="post">
+        <input type="text" name="MedInc" placeholder="MedInc" required><br>
+        <input type="text" name="HouseAge" placeholder="HouseAge" required><br>
+        <input type="text" name="AveRooms" placeholder="AveRooms" required><br>
+        <input type="text" name="AveBedrms" placeholder="AveBedrms" required><br>
+        <input type="text" name="Population" placeholder="Population" required><br>
+        <input type="text" name="AveOccup" placeholder="AveOccup" required><br>
+        <input type="text" name="Latitude" placeholder="Latitude" required><br>
+        <input type="text" name="Longitude" placeholder="Longitude" required><br>
+        <button type="submit">Predict</button>
+    </form>
+<br>
+<br>
+</div>
+{{prediction}}
+</body>
+</html>
